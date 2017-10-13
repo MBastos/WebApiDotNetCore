@@ -1,0 +1,10 @@
+/home/bastos/dotnetProjects/WebApiDotNetCore/bin/Debug/netcoreapp2.0/WebApiDotNetCore.deps.json
+/home/bastos/dotnetProjects/WebApiDotNetCore/bin/Debug/netcoreapp2.0/WebApiDotNetCore.runtimeconfig.json
+/home/bastos/dotnetProjects/WebApiDotNetCore/bin/Debug/netcoreapp2.0/WebApiDotNetCore.runtimeconfig.dev.json
+/home/bastos/dotnetProjects/WebApiDotNetCore/bin/Debug/netcoreapp2.0/WebApiDotNetCore.dll
+/home/bastos/dotnetProjects/WebApiDotNetCore/bin/Debug/netcoreapp2.0/WebApiDotNetCore.pdb
+/home/bastos/dotnetProjects/WebApiDotNetCore/obj/Debug/netcoreapp2.0/WebApiDotNetCore.csproj.CoreCompileInputs.cache
+/home/bastos/dotnetProjects/WebApiDotNetCore/obj/Debug/netcoreapp2.0/WebApiDotNetCore.AssemblyInfoInputs.cache
+/home/bastos/dotnetProjects/WebApiDotNetCore/obj/Debug/netcoreapp2.0/WebApiDotNetCore.AssemblyInfo.cs
+/home/bastos/dotnetProjects/WebApiDotNetCore/obj/Debug/netcoreapp2.0/WebApiDotNetCore.dll
+/home/bastos/dotnetProjects/WebApiDotNetCore/obj/Debug/netcoreapp2.0/WebApiDotNetCore.pdb
