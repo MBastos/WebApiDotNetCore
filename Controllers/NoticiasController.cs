@@ -30,14 +30,25 @@ namespace WebApiDotNetCore.Controllers
 
          // POST api/noticias
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromServices]CmsContext _db, [FromForm]Noticia noticia)
         {
+            _db.Noticias.Add(noticia);
         }
 
         // PUT api/noticias/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put([FromServices]CmsContext _db, int id, [FromForm]Noticia noticia)
         {
+            Noticia nt = _db.Noticias.Find(id);
+            if(nt == null)
+                NotFound();
+            
+            nt.Titulo = noticia.Titulo;
+            nt.Conteudo = noticia.Conteudo;
+            nt.DataCadastro = noticia.DataCadastro;
+            nt.DataPublicacao = noticia.DataPublicacao;
+
+            _db.Noticias.Update(nt);
         }
 
         // DELETE api/Noticias/5
