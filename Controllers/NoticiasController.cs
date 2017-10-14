@@ -8,6 +8,7 @@ using WebApiDotNetCore.Models;
 using System.Data;
 using System.Web;
 using WebApiDotNetCore.Forms;
+using WebApiDotNetCore.Filters;
 
 namespace WebApiDotNetCore.Controllers
 {
@@ -16,8 +17,7 @@ namespace WebApiDotNetCore.Controllers
     {   
         /// <summary>
         /// Listar todas as notícias
-        /// </summary>
-        /// <param name="_db"></param>
+        /// </summary>        
         /// <returns>Lista de todas as notícias</returns>
         // GET api/values
         [HttpGet]
@@ -43,7 +43,8 @@ namespace WebApiDotNetCore.Controllers
         /// </summary>        
         /// <param name="formularioDeNoticias">Formulário com os dados a serem inseridos</param>
         // POST api/noticias
-        [HttpPost]
+        [HttpPost]        
+        [ValidateModel]
         public void Post([FromServices]CmsContext _db, [FromForm]FormularioDeNoticias formularioDeNoticias)
         {
             var noticia = new Noticia
@@ -54,6 +55,7 @@ namespace WebApiDotNetCore.Controllers
                DataPublicacao = formularioDeNoticias.DataPublicacao 
             };
             _db.Noticias.Add(noticia);
+            _db.SaveChanges();
         }
 
         /// <summary>
@@ -62,7 +64,8 @@ namespace WebApiDotNetCore.Controllers
         /// <param name="id">Id da notícia</param>
         /// <param name="formularioDeNoticias">Formulário com dados da notícia a ser editado</param>
         // PUT api/noticias/5
-        [HttpPut("{id}")]
+        [HttpPut("{id}")]     
+        [ValidateModel]   
         public void Put([FromServices]CmsContext _db, int id, [FromForm]FormularioDeNoticias formularioDeNoticias)
         {
             Noticia noticia = _db.Noticias.Find(id);
@@ -74,6 +77,7 @@ namespace WebApiDotNetCore.Controllers
             noticia.DataPublicacao = formularioDeNoticias.DataPublicacao;
 
             _db.Noticias.Update(noticia);
+            _db.SaveChanges();
         }
 
         /// <summary>
@@ -90,6 +94,7 @@ namespace WebApiDotNetCore.Controllers
                 NotFound();
 
             _db.Noticias.Remove(noticia);
+            _db.SaveChanges();
         }  
     }
 }

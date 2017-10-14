@@ -53,7 +53,7 @@ namespace WebApiDotNetCore
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My CMS V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CMS V1");
             });
         }
     }
